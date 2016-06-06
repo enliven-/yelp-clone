@@ -11,3 +11,5 @@ npm install --save-dev babel-loader css-loader style-loader postcss-loader url-l
 npm install --save react react-dom react-router
 
 npm install --save-dev babel-cli
+
+npm install --save-dev autoprefixer precss cssnano
