@@ -1,1 +1,4 @@
 npm init
+
+mkdir -p src/{components,containers,styles,utils,views}\
+  && touch webpack.config.js
