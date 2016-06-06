@@ -22,6 +22,15 @@ const config = getConfig({
   clearBeforeBuild: true
 });
 
+// setup aliases
+config.resolve.root   = [src, modules];
+config.resolve.alias  = {
+  'css'         : path.join(src, 'styles'),
+  'containers'  : path.join(src, 'containers'),
+  'components'  : path.join(src, 'components'),
+  'utils'       : path.join(src, 'utils')
+};
+
 // env vars
 const dotEnvVars = dotenv.config();
 
