@@ -17,3 +17,7 @@ npm install --save-dev autoprefixer precss cssnano
 npm install --save-dev dotenv && touch .env
 
 npm install --save fontawesome
+
+npm install --save-dev mocha chai enzyme chai-enzyme expect sinon babel-register babel-polyfill react-addons-test-utils
+
+npm install --save-dev json-loader
