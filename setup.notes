@@ -23,3 +23,6 @@ npm install --save-dev mocha chai enzyme chai-enzyme expect sinon babel-register
 npm install --save-dev json-loader
 
 npm install --save-dev karma karma-chai karma-mocha karma-webpack karma-phantomjs-launcher phantomjs-prebuilt phantomjs-polyfill
+
+npm install --save-dev sourcemap karma-sourcemap-loader
+

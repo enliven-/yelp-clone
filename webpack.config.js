@@ -12,15 +12,44 @@ const root    = path.resolve(__dirname),
       dest    = path.join(root, 'dist');
 
 
+require('babel-register');
 // config w/ getConfig
 const NODE_ENV  = process.env.NODE_ENV,
-      isDev     = NODE_ENV === 'development';
+      isDev     = NODE_ENV === 'development',
+      isTest = NODE_ENV === 'test';
+
 
 const config = getConfig({
   in  : path.join(src, 'app.js'),
   out : dest,
   clearBeforeBuild: true
 });
+
+// testing setup
+config.externals = {
+  'react/lib/ReactContext': true,
+  'react/lib/ExecutionEnvironment': true,
+  'react/addons': true
+}
+
+if (isTest) {
+  config.externals = {
+    'react/lib/ReactContext': true,
+    'react/lib/ExecutionEnvironment': true,
+    'react/addons': true
+  }
+
+  config.plugins = config.plugins.filter(p => {
+    const name = p.constructor.toString();
+    const fnName = name.match(/^function (.*)\((.*\))/)
+
+    const idx = [
+      'DedupePlugin',
+      'UglifyJsPlugin'
+    ].indexOf(fnName[1]);
+    return idx < 0;
+  })
+}
 
 // setup aliases
 config.resolve.root   = [src, modules];
