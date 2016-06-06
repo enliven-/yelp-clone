@@ -15,3 +15,5 @@ npm install --save-dev babel-cli
 npm install --save-dev autoprefixer precss cssnano
 
 npm install --save-dev dotenv && touch .env
+
+npm install --save fontawesome
