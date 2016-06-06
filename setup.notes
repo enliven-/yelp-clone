@@ -26,3 +26,5 @@ npm install --save-dev karma karma-chai karma-mocha karma-webpack karma-phantomj
 
 npm install --save-dev sourcemap karma-sourcemap-loader
 
+npm install --save-dev yargs
+
