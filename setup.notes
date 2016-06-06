@@ -30,3 +30,5 @@ npm install --save-dev yargs
 
 npm install --save google-maps-react
 
+npm install --save classnames
+
