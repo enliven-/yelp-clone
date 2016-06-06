@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom'
 
 const App = React.createClass({
   render: function() {
-    return <div>Text text text</div>
+    return (
+      <div>
+        <h1>Environment: {__NODE_ENV__}</h1>
+      </div>
+    );
   }
 });
 
