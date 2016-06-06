@@ -28,3 +28,5 @@ npm install --save-dev sourcemap karma-sourcemap-loader
 
 npm install --save-dev yargs
 
+npm install --save google-maps-react
+
