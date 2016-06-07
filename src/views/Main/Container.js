@@ -28,7 +28,6 @@ class Container extends React.Component {
     searchNearby(google, map, opts)
       .then((results, pagination) => {
         // We got some results and a pagination object
-        console.log(results);
         this.setState({
           places: results,
           pagination
