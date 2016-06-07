@@ -4,6 +4,7 @@ import { browserHistory } from 'react-router';
 
 import App        from 'containers/App/App';
 import makeRoutes from './routes';
+import './app.css'
 
 const routes = makeRoutes();
 
