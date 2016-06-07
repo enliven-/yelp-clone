@@ -28,6 +28,7 @@ class Container extends React.Component {
     searchNearby(google, map, opts)
       .then((results, pagination) => {
         // We got some results and a pagination object
+        console.log(results);
         this.setState({
           places: results,
           pagination
@@ -51,11 +52,6 @@ class Container extends React.Component {
           title={'Restaurants'}
           places={this.state.places}
         />
-        <div className={styles.content}>
-          {this.state.places.map(place => {
-            return (<div key={place.id}>{place.name}</div>)
-          })}
-        </div>
       </div>
     )
   }
