@@ -39,20 +39,36 @@ class Container extends React.Component {
   }
 
   render() {
+
+    let children = null;
+    if (this.props.children) {
+      children = React.cloneElement(
+        this.props.children,
+        {
+          google: this.props.google,
+          places: this.state.places,
+          loaded: this.props.loaded
+        });
+    }
+
     return (
-      <div>
         <Map
-          onReady={this.onReady.bind(this)}
           google={this.props.google}
+          onReady={this.onReady.bind(this)}
           visible={false}
-          className={styles.wrapper}
-        />
-        <Header />
-        <Sidebar
-          title={'Restaurants'}
-          places={this.state.places}
-        />
-      </div>
+          className={styles.wrapper}>
+          
+          <Header />
+
+          <Sidebar
+              title={'Restaurants'}
+              places={this.state.places} />
+
+          <div className={styles.content}>
+            {children}
+          </div>
+
+        </Map>
     )
   }
 }
