@@ -7,9 +7,9 @@ import Detail from './Detail/Detail';
 const makeMainRoutes = () => {
   return (
     <Route path="/" component={Container}>
-      <Route path="map" component={Map} />
-      <Route path="map/detail/:placeId"
-            component={Detail} />
+      <Route path="map" component={Map}>
+        <Route path="detail/:placeId" component={Detail} />
+      </Route>
     </Route>
   )
 }
