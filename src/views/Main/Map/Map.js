@@ -13,6 +13,7 @@ export default class MapComponent extends React.Component {
                 name={place.id}
                 place={place}
                 position={place.geometry.location}
+                onClick={this.props.onMarkerClick.bind(this)}
               />
     })
   }
